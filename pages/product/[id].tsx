@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 const ProductPage = () => {
-  const { query } = useRouter()
+  const [product, setProduct] = useState<TProduct>()
+  const {
+    query: { id },
+  } = useRouter()
+
+  useEffect(() => {
+    window
+      .fetch(`/api/avo/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data)
+        console.log(data)
+      })
+  }, [id])
 
   return (
-    <section>
-      <h1>Página producto: {query.id}</h1>
-    </section>
+    <div>
+      <div>product</div>
+      <div>{product?.name}</div>
+    </div>
   )
 }
-
 export default ProductPage
