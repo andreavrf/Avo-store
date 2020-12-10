@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../components/Navbar/Navbar'
 
 export const HomePage = () => {
-  const [productList, setProductList] = useState<TProduct>([])
+  const [productList, setProductList] = useState<TProduct[]>([])
   useEffect(() => {
     window
       .fetch('/api/avo')

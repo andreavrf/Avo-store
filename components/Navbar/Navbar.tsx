@@ -1,17 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-export default function Navbar() {
-  return (
-    <nav>
-      <menu>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </menu>
-    </nav>
-  )
+import { Avocado } from '@components/SVGIcons'
+
+const Navbar = () => {
+  const { pathname } = useRouter()
+  return <nav className="navbar"></nav>
 }
+
+export default Navbar
