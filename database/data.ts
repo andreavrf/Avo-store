@@ -1,6 +1,6 @@
 const data: Record<TProductId, TProduct> = {
   '2zd33b8c': {
-    name: 'Maluma Hass Avocado',
+    name: 'Hass Avocado',
     id: '2zd33b8c',
     sku: 'NUR72KCM',
     price: 1.15,

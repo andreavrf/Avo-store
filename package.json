@@ -13,6 +13,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "bootstrap": "^5.0.0-beta1",
     "next": "^9.4.2",
     "react": "^16.13.1",
