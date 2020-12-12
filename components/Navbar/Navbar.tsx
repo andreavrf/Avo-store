@@ -1,7 +1,7 @@
 import React from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+
 import { Avocado } from '@components/SVGIcons'
 import { Basket } from '@components/SVGIcons'
 const navbar = () => {
@@ -11,18 +11,25 @@ const navbar = () => {
         <Avocado />
         Avo store
       </Navbar.Brand>
-
-      <Link href="/">
-        <Nav className="mr-auto">
-          <Nav.Link href="/">Store</Nav.Link>
-        </Nav>
-      </Link>
-      <Link href="/">
-        <Nav className="mr-auto">
-          <Basket />
-          <Nav.Link href="/">Canast</Nav.Link>
-        </Nav>
-      </Link>
+      <Container>
+        <Row>
+          <Col md={4}>
+            <Link href="/">
+              <Nav className="mr-auto">
+                <Nav.Link href="/">Store</Nav.Link>
+              </Nav>
+            </Link>
+          </Col>
+          <Col>
+            <Link href="/">
+              <Nav className="mr-auto">
+                <Basket />
+                <Nav.Link href="/">Canast</Nav.Link>
+              </Nav>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
     </Navbar>
   )
 }

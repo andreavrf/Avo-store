@@ -1,6 +1,5 @@
 import React from 'react'
 import { Avocado } from '@components/SVGIcons'
-import './header.css'
 
 const Header = () => {
   return (
@@ -8,6 +7,13 @@ const Header = () => {
       Platzi
       <Avocado />
       Avo
+      <style jsx>{`
+        .header_container {
+          font-size: 30px;
+          text-align: center;
+          margin-top: 10px;
+        }
+      `}</style>
     </div>
   )
 }

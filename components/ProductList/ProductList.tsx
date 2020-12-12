@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent } from 'semantic-ui-react'
+import { Card, CardDeck, Container, Row, Col } from 'react-bootstrap'
 import Link from 'next/link'
 
 type ProductListProps = {
@@ -9,18 +9,18 @@ type ProductListProps = {
 const mapProductsToCards = (products: TProduct[]) =>
   products.map(({ name, id, price, image }) => (
     <Link key={id} href="/product/[id]" as={`/product/${id}`}>
-      <Card
-        image={image}
-        header={name}
-        meta={<Card.Meta style={{ color: 'dimgray' }}>{price}</Card.Meta>}
-      />
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={image} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>{price}</Card.Text>
+        </Card.Body>
+      </Card>
     </Link>
   ))
 
 const ProductList = ({ products }: ProductListProps) => (
-  <Card.Group itemsPerRow={3} stackable>
-    {mapProductsToCards(products)}
-  </Card.Group>
+  <CardDeck>{mapProductsToCards(products)}</CardDeck>
 )
 
 export default ProductList
