@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from '@components/Layout/Layout'
 import { Figure, Image } from 'react-bootstrap'
-import { Z_BLOCK } from 'zlib'
+import { Container } from 'next/app'
+
 const avoFacts = [
   {
     title: 'Most avocados come from Mexico',
@@ -35,24 +36,24 @@ const AboutPage = () => {
     <Layout>
       <section>
         <h1 className="title_about">5 Surprising Facts About Avocados</h1>
-        <Figure className="mx-auto d-block">
-          <Figure.Image
-            width={600}
-            height={480}
-            alt="171x180"
-            src="images/avocados.jpg"
-          />
-          <Figure.Caption>
+        <img
+          className="img_about img-fluid img-thumbnail"
+          src="/images/avocados.jpg"
+          alt="Avocados"
+        />
+        <h6>
+          <figcaption className="text-center">
             Originally from{' '}
             <a
-              href="https://www.tasteofhome.com/article/13-surprising-facts-about-avocados/"
               target="_blank"
+              href="https://www.tasteofhome.com/article/13-surprising-facts-about-avocados/"
             >
               Taste of Home
             </a>
-          </Figure.Caption>
-        </Figure>
+          </figcaption>
+        </h6>
       </section>
+
       <ol>
         {avoFacts.map(({ title, content }) => {
           return (
@@ -65,9 +66,14 @@ const AboutPage = () => {
       </ol>
 
       <style jsx>{`
+        a {
+          text-decoration: none;
+        }
         ol {
           padding: 0;
-          margin: 0;
+          margin-left: 15rem;
+          margin-right: 15rem;
+          margin-top: 5rem;
         }
         ol {
           list-style: none;
@@ -84,7 +90,7 @@ const AboutPage = () => {
           // Boring stuff
           position: absolute;
           top: -43px;
-          left: -5px;
+          left: -15px;
           color: #cecece;
           font-size: 5rem;
           font-weight: bold;

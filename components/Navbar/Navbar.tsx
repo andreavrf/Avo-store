@@ -11,25 +11,22 @@ const navbar = () => {
         <Avocado />
         Avo store
       </Navbar.Brand>
-      <Container>
-        <Row>
-          <Col md={4}>
-            <Link href="/">
-              <Nav className="mr-auto">
-                <Nav.Link href="/">Store</Nav.Link>
-              </Nav>
-            </Link>
-          </Col>
-          <Col>
-            <Link href="/">
-              <Nav className="mr-auto">
-                <Basket />
-                <Nav.Link href="/">Canast</Nav.Link>
-              </Nav>
-            </Link>
-          </Col>
-        </Row>
-      </Container>
+      <Link href="/">
+        <Nav>
+          <Nav.Link href="/">Store</Nav.Link>
+        </Nav>
+      </Link>
+
+      <Navbar.Collapse className="justify-content-end">
+        <Navbar.Text>
+          <Link href="/">
+            <Nav>
+              <Basket />
+              <Nav.Link href="/">Canast</Nav.Link>
+            </Nav>
+          </Link>
+        </Navbar.Text>
+      </Navbar.Collapse>
     </Navbar>
   )
 }
