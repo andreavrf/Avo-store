@@ -1,10 +1,15 @@
 import React from 'react'
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { Navbar, Nav } from 'react-bootstrap'
 
 import { Avocado } from '@components/SVGIcons'
-import { Basket } from '@components/SVGIcons'
+import ShoppingCartIcon from './ShoppingCartIcon'
+import { useCart } from '@store/Cart'
+
 const navbar = () => {
+  // const { pathname } = useRouter()
+  const { count: cartCount } = useCart()
   return (
     <Navbar bg="light" variant="light">
       <Navbar.Brand>
@@ -19,10 +24,9 @@ const navbar = () => {
 
       <Navbar.Collapse className="justify-content-end">
         <Navbar.Text>
-          <Link href="/">
+          <Link href="/cart">
             <Nav>
-              <Basket />
-              <Nav.Link href="/">Canast</Nav.Link>
+              <ShoppingCartIcon name="Canast" cartCount={cartCount} />
             </Nav>
           </Link>
         </Navbar.Text>
