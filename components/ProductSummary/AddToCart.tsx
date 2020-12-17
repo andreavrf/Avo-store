@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { InputGroup, Button, FormControl } from 'react-bootstrap'
 import { useCartMutations } from '@store/Cart'
 type AddToCartProps = {
   product: TProduct
@@ -56,18 +56,22 @@ const AddToCart = ({ product }: AddToCartProps) => {
     setQuantity(parseInt(target.value, 10))
   return (
     <div>
-      <Form.Control
-        className="col-3"
-        type="number"
-        placeholder="Quantity"
-        value={quantity}
-        min={1}
-        step={1}
-        onChange={handleChange}
-      />
-      <Button onClick={handleSubmit} className="btn-success">
-        Add to cart
-      </Button>
+      <InputGroup className="mb-3">
+        <FormControl
+          className="col-4"
+          type="number"
+          placeholder="Quantity"
+          value={quantity}
+          min={1}
+          step={1}
+          onChange={handleChange}
+        />
+        <InputGroup.Append>
+          <Button variant="outline-success" onClick={handleSubmit}>
+            Add to Cart
+          </Button>
+        </InputGroup.Append>
+      </InputGroup>
     </div>
   )
 }

@@ -1,7 +1,5 @@
 import React from 'react'
 import Layout from '@components/Layout/Layout'
-import { Figure, Image } from 'react-bootstrap'
-import { Container } from 'next/app'
 
 const avoFacts = [
   {
@@ -71,8 +69,8 @@ const AboutPage = () => {
         }
         ol {
           padding: 0;
-          margin-left: 15rem;
-          margin-right: 15rem;
+          margin-left: 5rem;
+          margin-right: 5rem;
           margin-top: 5rem;
         }
         ol {

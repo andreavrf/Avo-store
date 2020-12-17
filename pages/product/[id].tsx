@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import ProductDetail from '@components/ProductDetail/ProductDetail'
-import ProductAttributes from '@components/ProductDetail/ProductAttributes'
+
 import Layout from '@components/Layout/Layout'
+import ProductSummary from '@components/ProductSummary/ProductSummary'
 
 const ProductPage = () => {
   const { query } = useRouter()
@@ -21,7 +21,7 @@ const ProductPage = () => {
 
   return (
     <Layout>
-      {product == null ? null : <ProductDetail product={product} />}
+      {product == null ? null : <ProductSummary product={product} />}
     </Layout>
   )
 }

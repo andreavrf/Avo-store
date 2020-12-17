@@ -12,6 +12,7 @@ const Header = () => {
           font-size: 30px;
           text-align: center;
           margin-top: 10px;
+          margin-bottom: 2rem;
         }
       `}</style>
     </div>

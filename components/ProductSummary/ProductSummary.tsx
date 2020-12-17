@@ -1,14 +1,15 @@
 import React from 'react'
 import { Media } from 'react-bootstrap'
-import ProductAttributes from '@components/ProductDetail/ProductAttributes'
-import AddToCart from '@components/ProductDetail/AddToCart'
-type ProductDetailProps = {
+import AddToCart from './AddToCart'
+import ProductAttributes from './ProductAttributes'
+
+type ProductSummaryProps = {
   product: TProduct
 }
-const ProductDetail = ({ product }: ProductDetailProps) => {
+const ProductSummary = ({ product }: ProductSummaryProps) => {
   return (
     <div>
-      <Media style={{ margin: 'auto', marginLeft: '18rem' }}>
+      <Media style={{ margin: 'auto', marginLeft: '5rem' }}>
         <img
           width={400}
           height={400}
@@ -27,4 +28,4 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
     </div>
   )
 }
-export default ProductDetail
+export default ProductSummary

@@ -1,43 +1,45 @@
 import React from 'react'
 import Link from 'next/link'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => (
   <div className="footer">
-    <Row className="justify-content-md-center">
-      <Col xs lg="2">
-        About
-      </Col>
-      <Col xs lg="2">
-        Services
-      </Col>
-      <Col xs lg="2">
-        Made by
-      </Col>
-    </Row>
-    <Row className="justify-content-md-center">
-      <Col xs lg="2">
-        <Link href="/about">
-          <a className="link">Read more</a>
-        </Link>
-      </Col>
-      <Col xs lg="2">
-        <Link href="/">
-          <a className="link">Products</a>
-        </Link>
-      </Col>
-      <Col xs lg="2">
-        <a
-          className="link"
-          href="https://www.linkedin.com/in/andrea-rosario-farias-11317a1b7/"
-          target="_blank"
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-      </Col>
-    </Row>
+    <div className="container">
+      <Row className="justify-content-md-center">
+        <Col xs lg="2">
+          About
+        </Col>
+        <Col xs lg="2">
+          Services
+        </Col>
+        <Col xs lg="2">
+          Made by
+        </Col>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col xs lg="2">
+          <Link href="/about">
+            <a className="link">Read more</a>
+          </Link>
+        </Col>
+        <Col xs lg="2">
+          <Link href="/">
+            <a className="link">Products</a>
+          </Link>
+        </Col>
+        <Col xs lg="2">
+          <a
+            className="link"
+            href="https://www.linkedin.com/in/andrea-rosario-farias-11317a1b7/"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </Col>
+      </Row>
+    </div>
 
     <div className="colophon">
       <p className="colophon-entry">
@@ -75,6 +77,16 @@ const Footer = () => (
       </p>
     </div>
     <style jsx>{`
+      .footer {
+        margin-top: 5rem;
+        margin-bottom: 0px;
+      }
+      .container {
+        margin-left: 2rem;
+      }
+      .link {
+        text-decoration: none;
+      }
       .colophon {
         text-align: center;
         margin-top: 3.2rem;
@@ -83,12 +95,6 @@ const Footer = () => (
       .colophon-entry {
         color: grey;
         margin-bottom: 0;
-      }
-      .link {
-        text-decoration: none;
-      }
-      .footer {
-        background-color: #f8f9fa;
       }
     `}</style>
   </div>

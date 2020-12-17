@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardDeck, Container, Row, Col } from 'react-bootstrap'
+import { Card, CardDeck } from 'react-bootstrap'
 import Link from 'next/link'
 
 type ProductListProps = {
@@ -8,13 +8,13 @@ type ProductListProps = {
 
 const mapProductsToCards = (products: TProduct[]) =>
   products.map(({ name, id, price, image }) => (
-    <Link key={id} href="/product/[id]" as={`/product/${id}`}>
+    <Link key={id} href="/product/[id]" as={`/product/${id}`} passHref>
       <div>
-        <Card style={{ width: '18rem', marginBottom: '1rem' }}>
+        <Card style={{ width: '19.7rem', marginBottom: '2rem' }}>
           <Card.Img src={image} />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-            <Card.Text>{price}</Card.Text>
+            <Card.Text>{'$ ' + price}</Card.Text>
           </Card.Body>
         </Card>
       </div>

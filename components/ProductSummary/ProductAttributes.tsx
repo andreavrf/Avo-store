@@ -7,12 +7,15 @@ const ProductAttributes = ({
 }: TProductAttributes) => {
   return (
     <div className="container">
-      <hr />
-      <div>
+      <div className="container_description">
+        <hr />
         <b>Description</b>
         <p> {description}</p>
       </div>
-      <Table bordered>
+      <Table
+        bordered
+        style={{ width: '30rem', margin: 'auto', marginTop: '3rem' }}
+      >
         <thead className="table-active">
           <tr>
             <th colSpan={2} className="text-center">
@@ -31,6 +34,12 @@ const ProductAttributes = ({
           })}
         </tbody>
       </Table>
+      <style jsx>{`
+        .container_description {
+          margin-left: 8rem;
+          margin-rigth: 8rem;
+        }
+      `}</style>
     </div>
   )
 }

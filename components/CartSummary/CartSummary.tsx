@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Button } from 'semantic-ui-react'
+import { Button, ListGroup } from 'react-bootstrap'
 
 type CartSummaryProps = {
   totalAmount: number
@@ -7,15 +7,18 @@ type CartSummaryProps = {
 
 const CartSummary = ({ totalAmount }: CartSummaryProps) => {
   return (
-    <Segment clearing size="large" as="section">
-      <span>
-        <strong>Sub total:</strong>
-        {` ${totalAmount}`}
-      </span>
-      <Button color="black" floated="right">
-        Check out
-      </Button>
-    </Segment>
+    <div>
+      <ListGroup style={{ margin: '0rem 10rem 16rem 10rem' }}>
+        <ListGroup.Item>
+          <strong>Sub total:</strong>
+          {` ${'$ ' + totalAmount}`}
+
+          <Button variant="dark" style={{ float: 'right' }}>
+            Check out
+          </Button>
+        </ListGroup.Item>
+      </ListGroup>
+    </div>
   )
 }
 

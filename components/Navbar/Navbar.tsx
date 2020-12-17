@@ -8,25 +8,28 @@ import ShoppingCartIcon from './ShoppingCartIcon'
 import { useCart } from '@store/Cart'
 
 const navbar = () => {
-  // const { pathname } = useRouter()
+  const { pathname } = useRouter()
   const { count: cartCount } = useCart()
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar>
       <Navbar.Brand>
-        <Avocado />
-        Avo store
+        <Link href="/" passHref>
+          <Nav>
+            <Nav.Link href="/">
+              <Avocado />
+              Avo store
+            </Nav.Link>
+          </Nav>
+        </Link>
       </Navbar.Brand>
-      <Link href="/">
-        <Nav>
-          <Nav.Link href="/">Store</Nav.Link>
-        </Nav>
-      </Link>
 
       <Navbar.Collapse className="justify-content-end">
         <Navbar.Text>
-          <Link href="/cart">
+          <Link href="/cart" passHref>
             <Nav>
-              <ShoppingCartIcon name="Canast" cartCount={cartCount} />
+              <Nav.Link href="/cart">
+                <ShoppingCartIcon name="Canast" cartCount={cartCount} />
+              </Nav.Link>
             </Nav>
           </Link>
         </Navbar.Text>
